@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Mouse_Point : MonoBehaviour {
 
+	public float timer = 5.0f;
+
 	RaycastHit hit;
 
 	public static GameObject CurrentlySelectedUnit;
@@ -19,8 +21,33 @@ public class Mouse_Point : MonoBehaviour {
 	private static Vector2 MouseDragStart;
 
 	private static float clickDragZone = 1.3f;
-	
+
+	// Issue: the scene restarts, but unable to click the tiles.
+	/////////////////////////////////////////////////////////////////
+	// (MissingReferenceException: The object of type 'GameObject' has been destroyed but you are still trying to access it.
+	// Your script should either check if it is null or you should not destroy the object.)
+	/////////////////////////////////////////////////////////////////
+	void Start () {
+		
+		Time.timeScale = 1;
+		
+	}
+
+
+	// The scene pauses after 5 seconds. After 3 seconds of pausing, the scene restarts.
 	void Update () {
+
+		timer -= Time.deltaTime;
+		Debug.Log ("Time: " + timer);
+
+		if (timer <= 0) {
+			Time.timeScale = 0;
+			autoRestart();
+			Application.LoadLevel ("Game");
+			timer = 5.0f;
+		}
+
+
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		
 		if (Physics.Raycast (ray, out hit, Mathf.Infinity)) {
@@ -184,5 +211,12 @@ public class Mouse_Point : MonoBehaviour {
 			return true;
 		else
 			return false;
+	}
+
+	// Wait 3 seconds 
+	public IEnumerator autoRestart() {
+
+		yield return new WaitForSeconds (3);
+
 	}
 }
