@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GridScript : MonoBehaviour {
 	
+	public int amount = 0;
 	public Transform BlankWall;
 	public Transform CorrectWall;
 	public Vector3 Size;
@@ -14,7 +15,6 @@ public class GridScript : MonoBehaviour {
 
 	void CreateGrid(){
 		//create grid here
-		int amount = 0;
 		for (int x = 0; x < Size.x; x++) {
 			for(int z = 0; z < Size.z; z++){
 				Transform newCell;

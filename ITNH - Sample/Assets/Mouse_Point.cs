@@ -40,12 +40,7 @@ public class Mouse_Point : MonoBehaviour {
 		timer -= Time.deltaTime;
 		Debug.Log ("Time: " + timer);
 
-		if (timer <= 0) {
-			Time.timeScale = 0;
-			autoRestart();
-			Application.LoadLevel ("Game");
-			timer = 5.0f;
-		}
+
 
 
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
@@ -55,32 +50,7 @@ public class Mouse_Point : MonoBehaviour {
 			if (Input.GetMouseButtonDown (0))
 				mouseDownPoint = hit.point;
 
-			//MouseDrag
-			if(Input.GetMouseButtonDown(0))
-			{
-				TimeLeftBeforeDeclareDrag = TimeLimitBeforeDeclareDrag;
-				MouseDragStart = Input.mousePosition;
-			}
-			else if(Input.GetMouseButton(0))
-			{
-				if(!UserIsDragging)
-				{
-					TimeLeftBeforeDeclareDrag -= Time.deltaTime;
-
-					if(TimeLeftBeforeDeclareDrag <= 0f || UserDraggingByPosition(MouseDragStart, Input.mousePosition))
-						UserIsDragging = true;
-				}
-				//User is dragging, compute GUI
-				if(UserIsDragging)
-					Debug.Log ("Yes, user is dragging!");
-			}
-			else if(Input.GetMouseButtonUp(0))
-			{
-				Debug.Log ("User no longer dragging");
-				TimeLeftBeforeDeclareDrag = 0f;
-				UserIsDragging = false;
-			}
-
+		
 			//MouseClick
 			if (!UserIsDragging)
 			{
