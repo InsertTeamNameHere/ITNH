@@ -15,6 +15,8 @@ public class TileRotation2 : MonoBehaviour {
 
 	public GameObject Flipped;
 
+	public GameObject Incorrect;
+
 	// Use this for initialization
 	void Start () {
 		if (GetComponent<Rigidbody>() == null)
@@ -50,12 +52,21 @@ public class TileRotation2 : MonoBehaviour {
 		if (Selected.activeInHierarchy) {
 			//transform.rotation = Quaternion.Slerp (0, 0, Time.deltaTime * rotationDamping);
 			Flipped.SetActive (true);
+			if(Incorrect.activeInHierarchy)
+			{
+				Incorrect.SetActive(false);
+			}
+			
+			else
+			{
+				Incorrect.SetActive(true);
+			}
 
 			Selected.SetActive (false);
 		}
 
 		else if (Flipped.activeInHierarchy) {
-			transform.Rotate (0, 0, 180 * Time.deltaTime);
+			//transform.Rotate (0, 0, 180 * Time.deltaTime);
 			timer -= Time.deltaTime;
 			
 			if (timer <= 1) {

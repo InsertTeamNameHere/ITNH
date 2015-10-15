@@ -6,7 +6,6 @@ public class GridScript : MonoBehaviour {
 	public int amount = 0;
 	public Transform BlankWall;
 	public Transform CorrectWall;
-	public Transform hiddenWall;
 	public Vector3 Size;
 
 	// Use this for initialization
@@ -19,7 +18,6 @@ public class GridScript : MonoBehaviour {
 		for (int x = 0; x < Size.x; x++) {
 			for(int z = 0; z < Size.z; z++){
 				Transform newCell;
-				Transform autoCell;
 				//int minimum = 5;
 				//if(amount >= minimum){
 				//	break;
@@ -27,25 +25,16 @@ public class GridScript : MonoBehaviour {
 				//else{
 					int wallType = Random.Range (0,100);
 					if(0 <= wallType && wallType < 75){
-						newCell = (Transform)Instantiate (BlankWall, new Vector3(x-4, 0, z), Quaternion.identity);
+						newCell = (Transform)Instantiate (BlankWall, new Vector3(x, 0, z), Quaternion.identity);
 						newCell.name = string.Format ("({0},{1})",x,z);
 						newCell.parent = transform;
-
-						autoCell = (Transform)Instantiate (BlankWall, new Vector3(x+4, 0, z), Quaternion.identity);
-						autoCell.name = string.Format ("({0},{1})",x,z);
-						autoCell.parent = transform;
 					}
 					else if(wallType >= 75){
-						newCell = (Transform)Instantiate (CorrectWall, new Vector3(x-4, 0, z), Quaternion.identity);
+						newCell = (Transform)Instantiate (CorrectWall, new Vector3(x, 0, z), Quaternion.identity);
 						newCell.name = string.Format ("({0},{1})",x,z);
 						newCell.parent = transform;
-
-
-						autoCell = (Transform)Instantiate (hiddenWall, new Vector3(x+4, 0, z), Quaternion.identity);
-						autoCell.name = string.Format ("({0},{1})",x,z);
-						autoCell.parent = transform;
-
-
+						amount++;
+						Debug.Log (amount);
 
 					}
 

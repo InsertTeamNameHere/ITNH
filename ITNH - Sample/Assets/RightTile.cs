@@ -70,7 +70,7 @@ public class RightTile : MonoBehaviour {
 		}
 		
 		else if (Flipped.activeInHierarchy) {
-			transform.Rotate (0, 0, 180 * Time.deltaTime);
+			//transform.Rotate (0, 0, 180 * Time.deltaTime);
 			timer -= Time.deltaTime;
 			
 			if (timer <= 1) {
