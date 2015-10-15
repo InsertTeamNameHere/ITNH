@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Mouse_Point : MonoBehaviour {
 
-	public float timer = 5.0f;
+	public float timerShow = 5.0f;
+	public float timerPlay = 10.0f;
+	public GUIStyle guiStyle = new GUIStyle ();
 
 	RaycastHit hit;
 
@@ -34,19 +36,12 @@ public class Mouse_Point : MonoBehaviour {
 	}
 
 
-	// The scene pauses after 5 seconds. After 3 seconds of pausing, the scene restarts.
 	void Update () {
-
-		timer -= Time.deltaTime;
-		Debug.Log ("Time: " + timer);
-
-		if (timer <= 0) {
-			Time.timeScale = 0;
-			autoRestart();
-			Application.LoadLevel ("Game");
-			timer = 5.0f;
+		// Initial timer to memorize the pattern. 
+		timerShow -= Time.deltaTime;
+		if (timerShow <= 0) { // Once the initial timer reaches 0, play timer starts
+			timerPlay -= Time.deltaTime;
 		}
-
 
 		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 		
@@ -55,31 +50,6 @@ public class Mouse_Point : MonoBehaviour {
 			if (Input.GetMouseButtonDown (0))
 				mouseDownPoint = hit.point;
 
-			//MouseDrag
-			if(Input.GetMouseButtonDown(0))
-			{
-				TimeLeftBeforeDeclareDrag = TimeLimitBeforeDeclareDrag;
-				MouseDragStart = Input.mousePosition;
-			}
-			else if(Input.GetMouseButton(0))
-			{
-				if(!UserIsDragging)
-				{
-					TimeLeftBeforeDeclareDrag -= Time.deltaTime;
-
-					if(TimeLeftBeforeDeclareDrag <= 0f || UserDraggingByPosition(MouseDragStart, Input.mousePosition))
-						UserIsDragging = true;
-				}
-				//User is dragging, compute GUI
-				if(UserIsDragging)
-					Debug.Log ("Yes, user is dragging!");
-			}
-			else if(Input.GetMouseButtonUp(0))
-			{
-				Debug.Log ("User no longer dragging");
-				TimeLeftBeforeDeclareDrag = 0f;
-				UserIsDragging = false;
-			}
 
 			//MouseClick
 			if (!UserIsDragging)
@@ -213,10 +183,24 @@ public class Mouse_Point : MonoBehaviour {
 			return false;
 	}
 
+	/*
 	// Wait 3 seconds 
 	public IEnumerator autoRestart() {
 
 		yield return new WaitForSeconds (3);
 
+	}
+	*/
+	
+	void OnGUI(){
+		guiStyle.fontSize = 30;
+		guiStyle.normal.textColor = Color.green;
+		guiStyle.font = (Font)Resources.Load ("Fonts/Sketch_Block");
+		
+		if (timerShow > 0) {
+			GUI.TextArea (new Rect (50, 50, 100, 100), "Time Remaining: " + (int)timerShow, guiStyle);
+		} else if (timerShow <= 0 && timerPlay > 0) {
+			GUI.TextArea (new Rect (50, 50, 100, 100), "Time Remaining: " + (int)timerPlay, guiStyle);
+		}
 	}
 }

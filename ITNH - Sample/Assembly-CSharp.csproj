@@ -54,6 +54,7 @@
      <Compile Include="Assets\ScoreKeeper.cs" />
      <Compile Include="Assets\TileRotation.cs" />
      <Compile Include="Assets\TileRotation2.cs" />
+     <Compile Include="Assets\Window.cs" />
      <Compile Include="Assets\clickScore.cs" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>G:/Software/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
