@@ -6,6 +6,8 @@ public class RightTile : MonoBehaviour {
 	public float m_speed = 20.0f;
 	
 	public float timer = 1.0f;
+
+	public float timer2 = 5.0f;
 	
 	public float rotationDamping;
 	
@@ -14,6 +16,8 @@ public class RightTile : MonoBehaviour {
 	public GameObject Selected;
 	
 	public GameObject Flipped;
+
+	public GameObject Flipped2;
 
 	public GameObject Correct;
 
@@ -51,6 +55,17 @@ public class RightTile : MonoBehaviour {
 		//translation *= Time.deltaTime;
 		
 		// Move translation along the object's x-axis
+
+		/*if (Flipped2.activeInHierarchy) 
+		{
+			transform.Rotate (0, 0, 180 * Time.deltaTime);
+			timer2 -= Time.deltaTime;
+			
+			if (timer2 <= 1) {
+				Flipped2.SetActive (false);
+			}
+		}*/
+
 		if (Selected.activeInHierarchy) {
 			//transform.rotation = Quaternion.Slerp (0, 0, Time.deltaTime * rotationDamping);
 			Flipped.SetActive (true);
@@ -63,7 +78,7 @@ public class RightTile : MonoBehaviour {
 			else
 			{
 				Point.Left = Point.Left - 1;
-				Correct.SetActive(true);
+				//Correct.SetActive(true);
 			}
 			
 			Selected.SetActive (false);

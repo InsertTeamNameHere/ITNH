@@ -37,7 +37,7 @@ public class clickScore : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		countText.GetComponent<TextMesh>().text = "Score: " + gameManager.GetComponent<ScoreKeeper> ().score;
+		GameObject.FindGameObjectWithTag("score box").GetComponent<TextMesh>().text = "Score: " + gameManager.GetComponent<ScoreKeeper> ().score;
 
 
 	}
