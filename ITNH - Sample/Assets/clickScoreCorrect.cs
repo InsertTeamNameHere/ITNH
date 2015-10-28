@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class clickScore : MonoBehaviour {
+public class clickScoreCorrect: MonoBehaviour {
 	//int playerScore = 0;
 
 	int increaseScore = 100;
@@ -29,10 +29,6 @@ public class clickScore : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0))
 		{
 			updateScore(increaseScore);
-		}
-		else if (Input.GetMouseButtonDown(1))
-		{
-			updateScore(decreaseScore);
 		}
 	}
 	// Update is called once per frame
