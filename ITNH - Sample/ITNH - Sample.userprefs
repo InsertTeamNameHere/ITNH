@@ -1,13 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TileRotation2.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\clickScore.cs">
     <Files>
-      <File FileName="Assets\clickScore.cs" Line="1" Column="1" />
-      <File FileName="Assets\clickToFlipTest.cs" Line="1" Column="1" />
-      <File FileName="Assets\Score.cs" Line="1" Column="1" />
-      <File FileName="Assets\RightTile.cs" Line="81" Column="7" />
-      <File FileName="Assets\TileRotation2.cs" Line="63" Column="7" />
-      <File FileName="Assets\Window.cs" Line="1" Column="1" />
+      <File FileName="Assets\clickScore.cs" Line="25" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
