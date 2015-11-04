@@ -38,7 +38,7 @@ public class Mouse_Point : MonoBehaviour {
 	void Update () {
 
 		timer -= Time.deltaTime;
-		Debug.Log ("Time: " + timer);
+
 
 
 

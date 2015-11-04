@@ -3,14 +3,19 @@ using System.Collections;
 
 public class clickToFlipTest : MonoBehaviour {
 
-	public float timerShow = 10.0f;
-	public float timerPlay = 30.0f;
+	private Window times;
+	public float timerShow;
+	public float timerPlay;
 	public GUIStyle guiStyle = new GUIStyle ();
 
 	private Animator flipController;
 	// Use this for initialization
 	void Start () {
 		flipController = this.GetComponent<Animator> ();
+		times = GameObject.FindGameObjectWithTag ("world").GetComponent<Window> ();
+
+		timerShow = times.StartTimer;
+		timerPlay = times.GameTimer;
 	}
 	
 	// Update is called once per frame

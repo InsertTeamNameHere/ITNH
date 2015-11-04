@@ -61,6 +61,8 @@
      <Compile Include="Assets\clickScoreCorrect.cs" />
      <Compile Include="Assets\clickScoreIncorrect.cs" />
      <Compile Include="Assets\clickToFlipTest.cs" />
+     <Compile Include="Assets\newInteractFlip.cs" />
+     <Compile Include="Assets\newInteractFlipCorrect.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
