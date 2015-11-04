@@ -6,13 +6,17 @@ public class clickToFlipTest : MonoBehaviour {
 	private Window times;
 	public float timerShow;
 	public float timerPlay;
+	public GameObject timerObject;
 	public GUIStyle guiStyle = new GUIStyle ();
 
 	private Animator flipController;
+
+	private TextMesh timer;
 	// Use this for initialization
 	void Start () {
 		flipController = this.GetComponent<Animator> ();
 		times = GameObject.FindGameObjectWithTag ("world").GetComponent<Window> ();
+		timer = this.GetComponent<TextMesh> ();
 
 		timerShow = times.StartTimer;
 		timerPlay = times.GameTimer;
@@ -22,14 +26,23 @@ public class clickToFlipTest : MonoBehaviour {
 	void Update () {
 
 		timerShow -= Time.deltaTime;
-		if (timerShow <= 0) {
+		if (timerShow <= 0.5) {
 			flipController.SetBool ("flipped", true);
 			timerPlay -= Time.deltaTime;
 		}
 
-		if (timerPlay <= 0) {
+		if (timerPlay <= 0.5) {
 			flipController.SetBool ("flipped", false);
 		}
+	
+		
+		timer.text = "Time Remaining: " + (int)timerShow;
+
+		if(timerShow <= 0.5){
+			Debug.Log("ping");
+			timerObject.SetActive(false);
+		}
+
 
 
 
@@ -44,7 +57,7 @@ public class clickToFlipTest : MonoBehaviour {
 
 	}
 
-	void OnGUI() {
+	/*void OnGUI() {
 		guiStyle.fontSize = 25;
 		guiStyle.normal.textColor = Color.green;
 		guiStyle.font = (Font)Resources.Load ("Fonts/Sketch_Block");
@@ -54,5 +67,5 @@ public class clickToFlipTest : MonoBehaviour {
 		} else if (timerShow <= 0 && timerPlay > 0) {
 			GUI.TextArea (new Rect (50, 50, 100, 100), "Time Remaining: " + (int)timerPlay, guiStyle);
 		}
-	}
+	}*/
 }
