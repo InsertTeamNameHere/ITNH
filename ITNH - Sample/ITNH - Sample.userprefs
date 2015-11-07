@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\buttonHover.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\StartTimer.cs">
     <Files>
-      <File FileName="Assets\Scripts\buttonHover.cs" Line="22" Column="4" />
-      <File FileName="Assets\clickToFlipTest.cs" Line="53" Column="4" />
+      <File FileName="Assets\StartTimer.cs" Line="18" Column="1" />
+      <File FileName="Assets\PlayTimer.cs" Line="26" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
