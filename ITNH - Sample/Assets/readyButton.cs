@@ -6,11 +6,15 @@ public class readyButton : MonoBehaviour {
 	
 	public int paused;
 	private TextMesh buttonText;
+	private Animator tileFlip;
+	private calculatedScore score;
 	
 	// Use this for initialization
 	void Start () {
 		//Time.timeScale = 0;
 		buttonText = GameObject.FindGameObjectWithTag ("readyButton").GetComponent<TextMesh> ();
+		tileFlip = GameObject.FindGameObjectWithTag ("anim tiles").GetComponent<Animator> ();
+		score = GameObject.FindGameObjectWithTag ("world").GetComponent<calculatedScore> ();
 	}
 	
 	// Update is called once per frame
@@ -35,6 +39,8 @@ public class readyButton : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
 			paused = 1;
 			buttonText.text = "";
+			tileFlip.SetBool("flipped", false);
+			score.finalScore = 0;
 		}
 	}
 }

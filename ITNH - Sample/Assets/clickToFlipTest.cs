@@ -11,7 +11,7 @@ public class clickToFlipTest : MonoBehaviour {
 		
 		flipController = this.GetComponent<Animator> ();
 		times = GameObject.FindGameObjectWithTag ("world").GetComponent<Window> ();
-		
+
 	}
 	
 	// Update is called once per frame

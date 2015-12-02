@@ -52,6 +52,8 @@
      <Compile Include="Assets\OldRightTile.cs" />
      <Compile Include="Assets\OldTileRotation2.cs" />
      <Compile Include="Assets\PlayTimer.cs" />
+     <Compile Include="Assets\Reset.cs" />
+     <Compile Include="Assets\ResetButton.cs" />
      <Compile Include="Assets\RightTile.cs" />
      <Compile Include="Assets\Score.cs" />
      <Compile Include="Assets\ScoreKeeper.cs" />
