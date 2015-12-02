@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\readyButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\calculatedScore.cs">
     <Files>
-      <File FileName="Assets\flip.cs" Line="1" Column="1" />
-      <File FileName="Assets\PlayTimer.cs" Line="1" Column="1" />
-      <File FileName="Assets\calculatedScore.cs" Line="1" Column="1" />
-      <File FileName="Assets\TileRotation.cs" Line="1" Column="1" />
-      <File FileName="Assets\readyButton.cs" Line="31" Column="34" />
+      <File FileName="Assets\calculatedScore.cs" Line="51" Column="5" />
+      <File FileName="Assets\Window.cs" Line="1" Column="1" />
+      <File FileName="Assets\Score.cs" Line="32" Column="1" />
+      <File FileName="Assets\newInteractFlip.cs" Line="28" Column="23" />
+      <File FileName="Assets\GridScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -9,6 +9,8 @@ public class Score : MonoBehaviour {
 
 	public float Total = 0.0f;
 
+	public float Incorrect = 0.0f;
+
 	static int Check = 1;
 
 	// Use this for initialization
