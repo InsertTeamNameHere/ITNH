@@ -5,15 +5,15 @@ public class calculatedScore : MonoBehaviour {
 
 	private Score score;
 
-	private int left;
-	private int total;
-	private int incorrect;
+	private float left;
+	private float total;
+	private float incorrect;
 
-	private int x;
-	private int z;
-	private int amount;
+	private float x;
+	private float z;
+	private float amount;
 
-	public int finalScore;
+	public float finalScore;
 
 	private TextMesh scoreText;
 
@@ -26,15 +26,15 @@ public class calculatedScore : MonoBehaviour {
 
 		time = GameObject.FindGameObjectWithTag ("world").GetComponent<Window> ();
 
-		x = (int)GameObject.FindGameObjectWithTag ("grid").GetComponent<GridScript> ().Size.x;
-		z = (int)GameObject.FindGameObjectWithTag ("grid").GetComponent<GridScript> ().Size.z;
+		x = GameObject.FindGameObjectWithTag ("grid").GetComponent<GridScript> ().Size.x;
+		z = GameObject.FindGameObjectWithTag ("grid").GetComponent<GridScript> ().Size.z;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		left = (int)score.Left;
-		total = (int)score.Total;
-		incorrect = (int)score.Incorrect;
+		left = score.Left;
+		total = score.Total;
+		incorrect = score.Incorrect;
 		amount = (x * z);
 
 		if (left == 0 && incorrect == 0) {
