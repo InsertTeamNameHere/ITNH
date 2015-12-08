@@ -5,12 +5,14 @@ public class StartTimer : MonoBehaviour {
 	
 	private Window times;
 	private TextMesh timerShowText;
+	private TextMesh instruction1;
 	public GameObject timerShowObject;
 	
 	// Use this for initialization
 	void Start () {
 		times = GameObject.FindGameObjectWithTag ("world").GetComponent<Window> ();
 		timerShowText = GameObject.FindGameObjectWithTag ("start timer").GetComponent<TextMesh> ();
+		instruction1 = GameObject.FindGameObjectWithTag ("inst1").GetComponent<TextMesh> ();
 	}
 	
 	// Update is called once per frame
@@ -23,6 +25,7 @@ public class StartTimer : MonoBehaviour {
 		}
 		if (times.StartTimer <= 0) {
 			timerShowObject.SetActive(false);
+			instruction1.text = "";
 		}
 		timerShowText.text = "Time Remaining: " + (int)times.StartTimer;
 	}
