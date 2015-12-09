@@ -1,12 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayTimer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\hardButton.cs">
     <Files>
-      <File FileName="..\..\..\..\Downloads\ITNH-master\ITNH-master\ITNH - Sample\Assets\PlayTimer.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\..\Downloads\ITNH-master\ITNH-master\ITNH - Sample\Assets\readyButton.cs" Line="1" Column="1" />
-      <File FileName="..\..\..\..\Downloads\ITNH-master\ITNH-master\ITNH - Sample\Assets\StartTimer.cs" Line="1" Column="1" />
-      <File FileName="Assets\StartTimer.cs" Line="32" Column="2" />
-      <File FileName="Assets\PlayTimer.cs" Line="40" Column="2" />
+      <File FileName="Assets\readyButton.cs" Line="1" Column="1" />
+      <File FileName="Assets\medButton.cs" Line="47" Column="1" />
+      <File FileName="Assets\hardButton.cs" Line="5" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

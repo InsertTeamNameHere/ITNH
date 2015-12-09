@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Reset : MonoBehaviour {
 
-	public Score score;
+	private Score score;
 
 	private int total;
 
@@ -12,7 +12,7 @@ public class Reset : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		score = this.GetComponent<Score> ();
 	}
 	
 	// Update is called once per frame
@@ -20,11 +20,11 @@ public class Reset : MonoBehaviour {
 		total = (int)score.Total;
 
 		if (total < SmallestAmount) {
-			Application.LoadLevel("Game [Updated]");
+			Application.LoadLevel(Application.loadedLevel);
 		}
 
 		else if (total > LargestAmount) {
-			Application.LoadLevel("Game [Updated]");
+			Application.LoadLevel(Application.loadedLevel);
 		}
 	}
 }
